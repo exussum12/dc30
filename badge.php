@@ -22,7 +22,7 @@ class Badge
     function getPerson(int $person)
     {
         $key = ($person ^ $this->badgeNumber);
-        $number = str_pad($person, 10, '0');
+        $number = str_pad($key, 10, '0', STR_PAD_LEFT);
         $number = str_split($number);
         $lastNumber = array_pop($number);
         array_unshift($number, $lastNumber);
